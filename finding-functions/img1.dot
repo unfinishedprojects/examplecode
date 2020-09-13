@@ -1,0 +1,22 @@
+digraph s1 {
+    node [shape=record];
+
+    "Elf Header"-> "Program Headers"
+    "Program Headers" -> "Dynamic Section"
+    "Dynamic Section" -> "String Table"
+    "Dynamic Section" -> "Symbol Table"
+    "Dynamic Section" -> "PLT Relocations"
+    "String Table" -> "Symbol"
+    "Symbol Table" -> "Symbol"
+    "Symbol" -> "Entry Index"
+    "Entry Index" -> "Relocation Entry"
+    "PLT Relocations" -> "Relocation Entry"
+    "Relocation Entry" -> "GOT Address"
+    "GOT Address" -> "Function Address"
+    rankdir=LR
+
+
+    
+
+}
+// dot -T png -o pic1.png pic1.dot
